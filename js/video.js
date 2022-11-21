@@ -74,11 +74,15 @@ mute.addEventListener("click", function(){
 	if (vid.muted){
 		vid.muted = false;
 		mute.innerHTML = "Mute";
+    slider.value = 100;
+    vid.volume = slider.value / 100; 
     vol_value.innerHTML = vid.volume * 100 + "%";
 		}
 	else {
       vid.muted = true;
 	   mute.innerHTML = "Unmute";
+     slider.value = 0;
+     vid.volume = slider.value;
      vol_value.innerHTML = "0%";
 	}
 }); 
