@@ -61,34 +61,27 @@ fast.onclick = function() {
 }
 
 
+var slider = document.getElementById("slider");
+var vol_value = document.getElementById("volume");
+slider.addEventListener("click", function(){
+  //console.log(slider.value)
+  vid.volume =  slider.value / 100;
+  vol_value.innerHTML = vid.volume * 100 + "%";
+})
+
 var mute = document.getElementById("mute");
 mute.addEventListener("click", function(){
 	if (vid.muted){
 		vid.muted = false;
 		mute.innerHTML = "Mute";
+    vol_value.innerHTML = vid.volume * 100 + "%";
 		}
 	else {
       vid.muted = true;
 	   mute.innerHTML = "Unmute";
+     vol_value.innerHTML = "0%";
 	}
 }); 
-
-document.querySelector("span") = "30";
-var slider = document.getElementsById("slider");
-// var vol_value = document.getElementsById("volume");
-// vol_value.innerHTML = "30%";
-// slider.addEventListener("click", function(){
-//   vid.volume =  slider.value / 100;
-//   document.getElementById("volume").innerHTML = vid.volume * 100 + "%";
-// })
-
-// slider.addEventListener("click", function (){
-// 	console.log(vid.volume);
-// 	vid.volume = document.querySelector("input").value / 100;
-// 	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
-// });
-
-
 
 
   
